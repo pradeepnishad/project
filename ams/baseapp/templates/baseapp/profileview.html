@@ -1,0 +1,103 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="main_view" style="height: 120vh;">
+  <div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container ">
+          <a class="navbar-brand" id="logo" href="#">Universal</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto text-center" id="ul">
+              <li class="nav-item ps-3">
+                <a class="nav-link active col-danger" aria-current="page" href="#">{{profile.user.username}}</a>
+              </li>
+              <li class="nav-item ps-3">
+                <a class="nav-link active col-danger" aria-current="page" href="{% url 'logout' %}">Login out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+      <div class="container-fluid bg-dark d-flex justify-content-center align-items-center" style="width: 100%; height: 100%;">
+        <div class="container h-75 bg-light d-flex flex-column align-items-center justify-content-center" style="width: 50%; border-radius: 20px;">
+          <div class=" mt-3 text-center d-flex justify-content-center align-items-center flex-column" style="width: 100%; height: 210px;">
+            <div><img src="{{ profile.profile_img.url }}" class="img-thumbnail" alt="profile image" style="border-radius: 50%; width: 150px; height: 150px;"></div>
+            <div class="pt-3" style="width: 150px;font-weight: bold;"><p class="">Profile Details</p></div>
+          </div>
+          <div class="line bg-dark mb-3" style="width: 85%; height: 2px;"></div>
+          <div class="name" style="width: 85%;">
+            <div class="name pb-3"><h4><span>Name:</span> {{profile.name}}</h4></div>
+            <div class="email pb-3"><h4><span>Email:</span> {{profile.email}}</h4></div>
+            <div class="phone pb-3"><h4><span>Phone:</span> {{profile.phone}}</h4></div>
+            <div class="course pb-3"><h4><span>Course:</span> {{profile.course}}</h4></div>
+          </div>
+          <div class="line bg-dark mb-5" style="width: 85%; height: 2px;"></div>
+          <div class="container w-75 d-flex justify-content-around " style="height: 60px;">
+            <div class="button " >
+              <a class="btn btn-primary" href="{% url 'profile_form' %}"> Edit Profile</a>
+            </div>
+            <div class="button">
+              <a class="btn btn-primary" href="{% url 'personalform' %}" 
+              data-toggle="popover" data-content="" data-placement="right"
+                    title="1.Ensure to edit your profile first before going to next Main form.
+2.Profile edit is only one time so make sure to fill details correctly
+                          " data-trigger="hover" style="padding: 7px 35px;"
+              > Next</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<style>
+
+  
+  .box p{
+    color:  #0d6efd;
+    font-weight: bold;
+    font-size: 1.4rem;
+    
+  }
+  .edit a, .ad-form a{
+    text-align: center;
+    padding: 15px;
+    background-color: #0d6efd;
+    border-radius: 50px;
+    color: white;
+  }
+ 
+
+  span{
+    color: black;
+  }
+
+  .box{
+    width:95%;
+    height: 50px;
+   
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .profile_pic{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .bold{
+    font-weight: bold;
+  }
+  .details{
+    border-radius: 20px;
+    margin-top: 30px;
+  }
+</style>
+{% endblock content %}

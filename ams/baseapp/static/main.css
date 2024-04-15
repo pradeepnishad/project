@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107; 
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #3f88f5;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #e05c69;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-dark: #212529;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  }
+
+  
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+/* navbar styling */
+
+
+
+
+#logo{
+    font-family: 'Croissant One', cursive;
+}
+
+a{
+    text-decoration: none;
+}
+
+#ul li a{
+    color: white;
+    font-weight: bold;
+    
+}
+
+
+
+i{
+    font-size: 2rem;
+    color: #198754;
+}
+
+
+
+#ul li a:hover{
+    color: var(--bs-danger);
+}
+
+.uni-danger:hover{
+    background-color: var(--bs-danger);
+}
+
+.content{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+
+.img{
+    width: 100%;
+    height: 550px;
+    background: url("/static/img/students.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 106, 235, 0.8);
+    backdrop-filter: blur(2px)
+}
+
+.achievement{
+    height: 60vh;
+}
+.grey{
+    background-color: #222425;
+    height: 600px;
+}
+
+iframe{
+    height: 400px;
+}
+
+
+
+
+
+@media(max-width: 1000px){
+    .img{
+        margin-top: 850px;
+    }
+    .sec-2{
+        margin-top: 400px ;
+    }
+
+    .form-1{
+        margin-top: 10px;
+    }
+
+    .grey{
+        margin-top: 350px;
+        width: 100%;
+        height: 1550px;
+    }
+
+    .d-point{
+        align-items: center;
+    }
+
+    .blk{
+        color: black;
+    }
+
+    .m-p{
+        margin-top: 600px;
+    }
+
+    iframe{
+        height: 300px;
+    }
+}
+
+@media(min-width: 1000px){
+    hr{
+        display: none;
+    }
+    
+}
+

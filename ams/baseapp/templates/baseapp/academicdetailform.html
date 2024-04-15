@@ -1,0 +1,120 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="" style="width: 100%;">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container ">
+      <a class="navbar-brand" id="logo" href="#">Universal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center" id="ul">
+          <li class="nav-item ps-3">
+            <a class="nav-link active col-danger" aria-current="page" href="#">{{academicdetails.user.username}}</a>
+          </li>
+          <li class="nav-item ps-3">
+            <a class="nav-link active col-danger" aria-current="page" href="{% url 'logout' %}">Login out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<div class="container-fluid w-100 bg-dark d-flex flex-column justify-content-center align-items-center" style="height: 1400px; margin-top: 40px;">
+  <div class="main w-50 bg-light d-flex justify-content-start align-items-center " style="height: 50px; padding: 10px 30px; border-radius: 10px;">
+    <a href="{% url 'personalform' %}" class="btn btn-primary">Personal details</a>
+    </div>
+  <br>
+    
+    <div class="main w-50 bg-light" style="padding: 10px 30px; border-radius: 10px;">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token%}
+      <h1 class="text-center mt-3 mb-5">Academic Detail</h1>
+      <h5 class="text-center mb-3">10th Grade details </h5>
+      
+      <div class="mb-3">
+        <label for="school_name" class="form-label">School name</label>
+        {{form.ssc_school_name}}
+      </div>
+      <div class="mb-3">
+        <label for="school_board" class="form-label">School Board</label>
+        {{form.ssc_school_board }}
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="passing_year" class="form-label">Passing year</label>
+          {{form.ssc_passing_year}}
+        </div>
+        <div class="col">
+          <label for="roll_no" class="form-label">Roll No</label>
+          {{form.ssc_rollno}}
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="marks" class="form-label">Marks</label>
+          {{form.ssc_marks}}
+        </div>
+        <div class="col">
+          <label for="class_grade" class="form-label">Class grade</label>
+          {{form.ssc_class_grade}}
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="ssc_class_percent" class="form-label">Percentage</label>
+        {{form.ssc_class_percent }}
+      </div>
+      <br>
+      <h5 class="text-center mb-3">12th Grade details </h5>
+      <div class="mb-3">
+        <label for="college_name" class="form-label">College name</label>
+        {{form.hsc_school_name}}
+      </div>
+      <div class="mb-3">
+        <label for="collge_board" class="form-label">College Board</label>
+        {{form.hsc_school_board }}
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="hsc_passing_year" class="form-label">Passing year</label>
+          {{form.hsc_passing_year}}
+        </div>
+        <div class="col">
+          <label for="hsc_roll_no" class="form-label">Roll No</label>
+          {{form.hsc_rollno}}
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="hsc_marks" class="form-label">Marks</label>
+          {{form.hsc_marks}}
+        </div>
+        <div class="col">
+          <label for="hsc_class_grade" class="form-label">Class grade</label>
+          {{form.hsc_class_grade}}
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="hsc_class_percent" class="form-label">Percentage</label>
+        {{form.hsc_class_percent }}
+      </div>
+      <div class="mb-3">
+        <label for="hsc_maths_marks" class="form-label">Maths marks</label>
+        {{form.hsc_maths_mark }}
+      </div>
+      <br>
+    <div style="width: 100%; height: 40px;" class=" d-flex justify-content-end " ><button type="submit" class="btn btn-primary">Next</button></div>
+</form>
+</div>
+</div>
+</div>
+
+<style>
+  label{
+    font-weight: bold;
+  }
+</style>
+{% endblock content %}

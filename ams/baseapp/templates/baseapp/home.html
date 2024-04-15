@@ -1,0 +1,257 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+{% block content%}
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container ">
+      <a class="navbar-brand" id="logo" href="#">Universal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center" id="ul">
+          <li class="nav-item ps-3">
+            <a class="nav-link active col-danger" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item ps-3">
+            <a class="nav-link  col-danger" href="{% url 'notice' %}">Notice board</a>
+          </li>
+          <li class="nav-item dropdown ps-3">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Academics
+            </a>
+            <ul class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item text-white uni-danger" href="{% url 'bms' %}">Bachelor of managements studies</a></li>
+              <li><a class="dropdown-item text-white uni-danger" href="{% url 'baf' %}">Bachelor of Finance and Accounts</a></li>
+              <li><a class="dropdown-item text-white uni-danger" href="{% url 'bsccs' %}">Bachelor of Science Computer Science</a></li>
+              <li><a class="dropdown-item text-white uni-danger" href="{% url 'bscit' %}">Bachelor of Science Information technology</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown ps-3">
+            <a class="nav-link dropdown-toggle col-danger" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Admission process
+            </a>
+            <ul class="dropdown-menu bg-primary bg-primary-unique" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item text-white uni-danger" href="{% url 'register' %}">Admission Registration form</a></li>
+              <li><a class="dropdown-item text-white uni-danger" href="{% url 'login' %}">Admission Login form</a></li>
+              <li><a class="dropdown-item text-white uni-danger" href="{% url 'admissionprocess' %}">Admission procedure </a></li>
+
+            </ul>
+          </li>
+          <li class="nav-item ps-3">
+            <a class="nav-link  col-danger" href="#enquiry">Enquiry</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active " data-bs-interval="5000">
+        <img src="{% static 'img/img1.jpg' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Our College</h5>
+          <p>Located in Ghatkoper, Central Mumbai. </p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="{% static 'img/img1.jpg' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Hall Way</h5>
+          <p>Cleaniless and Sanitation is the top proirity in our institute.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="{% static 'img/class.jpg' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Classrooms</h5>
+          <p>Infrastructure that will give a comfortable environment for studies.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container-fluid">
+
+    <div class="row w-100 d-flex justify-content-evenly align-items-center" style="height: 400px;">
+      <div class="col-lg h-75 d-flex justify-content-evenly  align-items-center flex-column">
+        <i class="fa-solid fa-book"></i>
+        <h1 class="text-dank">Academics</h1>
+        <div class="content w-75">
+          At Universal   College of Arts, Science & Commerce, we offer BMS, BAF, BSc. IT and BSc. CS
+        </div>
+        <h5 class="mt-5"><a class="text-danger" href="#">Learn more</a></h5>
+        <hr class="w-100">
+      </div>
+      <div class="col-lg h-75 d-flex justify-content-evenly align-items-center flex-column ">
+        <i class="fa-solid fa-earth-asia"></i>
+        <h1 class="text-dark">Admissions</h1>
+        <div class="content w-75">
+          The admission procedure is based on government and management norms.
+        </div>
+        <h5 class="mt-5"><a class="text-danger" href="#">Learn more</a></h5>
+        <hr class="w-100">
+      </div>
+      <div class="col-lg h-75 d-flex justify-content-evenly align-items-center flex-column ">
+        <i class="fa-solid fa-building-columns"></i>
+        <h1 class="text-dark">Examination</h1>
+        <div class="content w-75">
+          Minimum 40% marks have to be scored to pass each subject in each year.
+        </div>
+        <h5 class="mt-5"><a class="text-danger" href="#">Learn more</a></h5>
+        <hr class="w-100">
+      </div>
+      <div class="col-lg h-75 d-flex justify-content-evenly align-items-center flex-column ">
+        <i class="fa-solid fa-file-lines"></i>
+        <h1 class="text-dark">Activities</h1>
+        <div class="content w-75">
+          College offers comprehensive development of students through extracurricular activities.
+        </div>
+        <h5 class="mt-5"><a class="text-danger" href="#">Learn more</a></h5>
+      </div>
+    </div>
+  </div>
+  <!-- college moto -->
+  <div class="container-fluid p-0 img">
+    <div class="overlay">
+      <div class="container-fluid h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg h-100 d-flex justify-content-center  align-items-center flex-column">
+            <div class="" style="width: 300px; height: 130px;"> <img src="{% static 'img/logo.jpg' %}" class="rounded-circle mb-3"
+                alt="logo"> </div>
+            <h2 class="text-white">Universal College of Arts, <br>Science and Commerce.</h2>
+            <br>
+
+          </div>
+          <div
+            class="col-lg h-100 d-flex justify-content-center  align-items-start flex-column pt-4 d-point text-white ">
+            <h1 class="blk">Where would you begin?</h1>
+            <br>
+            <h5 class="blk"> No matter where you choose to begin, we offer abundant opportunities for learning and
+              growth and
+              opens doors to the future you envision!</h5>
+            <br>
+            <img src="{% static 'img/mulogo.jpg' %}" alt="">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- section 2 -->
+  <div class="container-fluid d-flex justify-content-center align-items-center sec-2" id="enquiry"
+    style="height: 600px;">
+    <div class="container  w-100 h-75">
+      <div class="row d-flex justify-content-center align-items-center h-100 ">
+        <div class="col-lg h-100 d-flex justify-content-center  align-items-center flex-column">
+          <img class="rounded" src="{% static 'img/img1.jpg' %}" alt="logo" style="width: 500px; height: 330px;">
+          <h3 class="mt-2">Campus</h3>
+        </div>
+        <form  method="POST" class="col-lg w-100 h-100 d-flex justify-content-center ps-3 rounded align-items-center flex-column bg-primary form-1">
+          {% csrf_token%}
+          <h1 class="text-white">Enquiry form</h1>
+          <div class="mb-3 row w-100 d-flex">
+            <label for="exampleFormControlInput1"  class="form-label text-white">Name</label>
+            <input name="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name">
+          </div>
+          <div class="mb-3 row w-100 d-flex">
+            <label for="exampleFormControlInput1" name="phonenumber" class="form-label text-white">Phone Number</label>
+            <input name="number" type="number" class="form-control" id="exampleFormControlInput1" placeholder="98679*****">
+          </div>
+          <div class="mb-3 row w-100">
+            <label for="exampleFormControlTextarea1" class="form-label text-white" required>Enquiry</label>
+            <textarea name="message" class="form-control w" id="exampleFormControlTextarea1" rows="3"
+              placeholder="put your enquiry here" required></textarea>
+          </div>
+          <div class="col-12 w-100 d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Submit</button><br>
+          </div>
+         
+                
+                {% if messages %}
+                {% for message in messages%}
+                {% if message.tags == "success" %}
+                
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong> {{message}}</strong> 
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              
+                {% endif %}           
+                {% endfor %}
+                {% endif %}
+          <p class="pt-2 text-white">The enquiry helping team will contact youu on the number you provided.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid grey d-flex flex-column justify-content-center align-items-center" style="height: 83vh;">
+    <div class=" mt-5" style=" width: 90%; height: 100%; ">
+      <div class="row p-5">
+        <div class="col-lg  w-100 h-100 d-flex justify-content-start align-items-start flex-column">
+          <h2 class="text-primary">Courses</h2>
+          <br>
+          <h5 class=""><a class="text-white" href="{% url 'bms' %}">Bachelor of Management Studies</a></h5>
+          <h5 class="pt-2"><a class="text-white" href="{% url 'baf' %}">Bachelor of Commerce (Accounting & Finance)</a></h5>
+          <h5 class="pt-2"><a class="text-white" href="{% url 'bscit' %}">Bachelor of Science (Information Technology)</a></h5>
+          <h5 class="pt-2"><a class="text-white" href="{% url 'bsccs' %}">Bachelor of Science (Computer Science)</a></h5>
+          <hr class="w-100 " style="height: 5px; color: red;">
+        </div>
+        <div class="col-lg  w-100 h-100 d-flex justify-content-start align-items-start flex-column">
+          <h2 class="text-primary">Admission</h2>
+          <br>
+          <h5 class="pt-2"><a class="text-white" href="{% url 'admissionprocess' %}">Admissions Procedure</a></h5>
+          <hr class="w-100 " style="height: 5px; color: red;">
+        </div>
+        <div class="col-lg w-100 h-100 d-flex justify-content-start align-items-start flex-column">
+          <h4 class="text-primary">Admineo College of Arts, Science and Commerce</h4>
+          <p class="pt-2"><a class="text-white" href="#">Plot No. 17, Tilak Road, Opp. Lion’s Garden, Ghatkopar (East), Mumbai 400 077.</a>
+          </p>
+          <p class="pt-2"><a class="text-white" href="#">Admission Helpdesk Number: 9136981250</a></p>
+          <p><a class="text-white" href="#">Contact Number <br>
+              022 669 000 28<br>
+              022 669 000 29</a></p>
+          <p><a class="text-white" href="#">info.msg@universalcollege.edu.in</a></p>
+          <p class="pt-2"><a class="text-white" href="#">For Careers –<br>
+              &ensp; &ensp; careers@universal.edu.in</a></p>
+          <hr class="w-100 " style="height: 5px; color: red;">
+        </div>
+        <div class="col-lg bg-danger w-100 h-100 d-flex justify-content-start align-items-start flex-column p-0">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.708122317019!2d72.90263747602916!3d19.076566451953163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cef291c9ad91%3A0xca364222620280b0!2sUniversal%20MSG-SGKM%20College%20of%20Arts%2C%20Science%20%26%20Commerce!5e0!3m2!1sen!2sin!4v1695583308397!5m2!1sen!2sin"
+             style="border:0; width: 100%;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="container-fluid  d-flex justify-content-center "><div class="w-25 h-100 bg-primary"><a href="http://127.0.0.1:8000/admin/login/?next=/admin/" class="dropdown-item text-white text-center btn" href="login.html">Admin login</a></div></div>
+        <div class="container-fluid bg-dark p-m pt-4" style="height: 40px;">
+          <p class="text-center text-white">&copy; Copyright Universal College Of Art, Science And Commerce | All Rights
+            Reserved 2023.</p>
+        </div>   
+      </div>
+    </div>
+    
+  </footer>
+
+
+{% endblock content %}

@@ -1,0 +1,78 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content%}
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+   <div class="container ">
+     <a class="navbar-brand" id="logo" href="#">Universal</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav ms-auto text-center" id="ul">
+           <li class="nav-item ps-3">
+               <a class="nav-link  col-danger" href="#bsccs">BSC CS</a>
+             </li>
+         <li class="nav-item ps-3">
+           <a class="nav-link  col-danger" href="#bscit">BSC IT</a>
+         </li>
+         <li class="nav-item ps-3">
+            <a class="nav-link  col-danger" href="#bms">BMS</a>
+          </li>
+          <li class="nav-item ps-3">
+            <a class="nav-link  col-danger" href="#baf">BAF</a>
+          </li>
+          <li class="nav-item ps-3">
+            <a class="nav-link  col-danger" href="{% url 'home' %}">Home</a>
+          </li>
+       </ul>
+     </div>
+   </div>
+ </nav>
+ <br>
+ <br>
+<div id="bsccs" class="container main bgcolor pt-3" style="height: 50vh;">
+<div class="container"><h1 class="text-center pt-1 text-primary">BSC CS</h1></div>
+{% for i in bsccs %}
+   <h4> <a href="{{i.link}}   ">-> {{i.notice}} </a></h4>
+{% endfor %}
+</div>
+<div id="bscit" class="container main bgcolor" style="height: 50vh;">
+   <div class="container"><h1 class="text-center pt-1 text-primary">BSC IT</h1></div>
+   {% for i in bscit %}
+   <h4> <a href="{{i.link}}">-> {{i.notice}} </a></h4>
+   {% endfor %}
+</div>
+<div id="bms" class="container main bgcolor" style="height: 50vh;">
+   <div class="container"><h1 class="text-center pt-1 text-primary">BMS</h1></div>
+   {% for i in bms %}
+   <h4> <a href="{{i.link}}">-> {{i.notice}} </a></h4>
+   {% endfor %}
+</div>
+<div id="baf" class="container main bgcolor" style="height: 50vh;">
+   <div class="container"><h1 class="text-center pt-1 text-primary">BAF</h1></div>
+   {% for i in baf %}
+   <h4> <a class="{{i.link}}">-> {{i.notice}} </a></h4>
+   {% endfor %}
+</div>
+  
+<style>
+   .main{
+      border: 1px solid;
+      border-bottom: rgb(0, 0, 0);
+   }
+
+   .bgcolor{
+      background-color: rgb(255, 255, 255);
+   }
+
+   /* h4{
+      color: rgb(0, 0, 0) ;
+   }
+   a{
+      color: rgb(0, 0, 0);
+   } */
+</style>
+
+{% endblock content %}

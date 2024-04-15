@@ -1,0 +1,310 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content%}
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+  <div class="container ">
+    <a class="navbar-brand" id="logo" href="#">Universal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto text-center" id="ul">
+        <li class="nav-item ps-3">
+          <a class="nav-link active col-danger" aria-current="page" href="#">{{userprofile.user.username}}</a>
+        </li>
+        <li class="nav-item ps-3">
+          <a class="nav-link active col-danger" aria-current="page" href="{% url 'logout' %}">Login out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid bg-dark d-flex justify-content-center align-items-center flex-column"
+  style="height: 330vh;">
+  <div class="container w-50 bg-light" style="height:5%;">
+    <h3 class="text-center pt-3">Review your Form before payment</h3>
+  </div>
+  <div class="container w-50 bg-light mt-3">
+    <!-- {{categoryDetail.minority|yesno:"Yes,No"}} -->
+    <div class="container w-100 bg-light  mt-3 d-flex justify-content-start align-items-center flex-column"
+      style="width: 1240px;">
+      <div class="container h-100">
+        <div class="row">
+          <div class="col-8  p-1">
+            <span class="fw-bold">Program:- </span><span>{{ userprofile.course }}</span>
+          </div>
+          <div class="col p-1 ">
+            <span class="fw-bold">Minority:- </span><span>{{categoryDetail.minority|yesno:"Yes,No"}}</span>
+          </div>
+        </div>
+
+        <div class="row mt-1">
+          <div class="col p-1">
+            <span class="fw-bold">Total Marks Obtained:- </span><span>{{ academicdetail.hsc_marks }}</span>
+          </div>
+          <div class="col p-1 ">
+            <span class="fw-bold">Out Of:- </span><span>600</span>
+          </div>
+          <div class="col p-1 ">
+            <span class="fw-bold">Percentage:- </span><span>{{ academicdetail.hsc_class_percent }}</span>
+          </div>
+        </div>
+        <div class=" row w-100 mt-4 d-flex">
+          <div class="col d-flex justify-content-end">
+            <div><img style="height: 70px; border-radius: 50%;" class="border border-dark"
+                src="{% static 'img/logo.jpg' %}" alt="logo"></div>
+          </div>
+          <div class="col-8 mt-3" style="line-height: 0px;">
+            <h3 class="text-primary">Universal</h3>
+            <p class=" text-primary ">College of arts Science and Commerce</p>
+          </div>
+          <div class=" row w-100  d-flex flex-column mt-2">
+            <div class="col">
+              <p class="text-center text-primary" style="font-size:13px;">Permanently Unaided | Recognised as Gujarati
+                Lingustic Minority Institution | Affiliated University of Mumbai <br>
+                Plot No. 17, Tilak Road, Opp. Lion’s Garden, Ghatkopar (East), Mumbai 400 077. Ph. 022-6690 0028/29 <br>
+                Email: infoGhatkoper@Universalcollege.com| WWW.universalcollege.com
+              </p>
+            </div>
+            <div class="col" style="line-height: 0cm;">
+              <h5 class="text-center">PRE ADMISSION FORM - 2023-24</h5>
+              <p class="text-center" style="font-size: 13px;">Incomplete Form will not be considered for admission</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- profile and sign -->
+    <div class="row" style="width: 100%; height: 150px;">
+      <div class="col d-flex justify-content-center " style="width: 50% ; height: 150px;">
+        <div><img style="width: 150px; height: 150px;" src="{{userprofile.profile_img.url}}" alt="profile image">
+        </div>
+      </div>
+      <div class="col d-flex justify-content-center " style="width: 50%; height: 150px;">
+        <div><img style="width: 150px; height: 150px;" src="{{documentdetail.signature.url}}" alt="profile image">
+        </div>
+      </div>
+    </div>
+    <div class=" ps-3 pe-3 pt-3 letter">
+      <p style="position: relative; float: right; font-size: 12px;" class="text-dark fw-bold">{{
+        userprofile.user.date_joined| date:"d/m/Y" }}</p>
+      <p style="font-size: 14px;">To,<br>
+        The principal, <br>
+        <span class="fw-bold">MSG - SGKM College of Arts, Science and Commerce</span><br>
+        <span class="fw-bold">Plot No. 17, Tilak Road, Opposite Lion's Garden, Ghatkopar East Mumbai - 400077</span><br>
+        Sir,<br>
+        I, the undersigned wish to apply for admission to the FY {{userprofile.course}} Program at
+        your esteemed college. My particulars & details are as under<br>
+      </p>
+    </div>
+    <table class="table table-borderless" cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th scope="col" colspan="2">Personal detail</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Name: </th>
+          <td>{{personaldetail.name}}</td>
+          <th> </th>
+          <td> </td>
+        </tr>
+        <tr>
+          <th scope="row">Email:</th>
+          <td>{{ userprofile.email }}</td>
+          <th>Mob no:</th>
+          <td>{{ userprofile.phone }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Address: </th>
+          <td class="text-wrap">{{ personaldetail.address }}</td>
+          <th>District: </th>
+          <td>{{ personaldetail.district }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Tehsil: </th>
+          <td>{{ personaldetail.tehsil }}</td>
+          <th>Parent no: </th>
+          <td>{{ personaldetail.parent_phone }}</td>
+        </tr>
+        <tr>
+          <th scope="row"> </th>
+          <td></td>
+          <th>Gender: </th>
+          <td>{{ personaldetail.gender }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Date of birth: </th>
+          <td>{{personaldetail.date_of_birth| date:"d/m/Y"}}</td>
+          <th>Martial status</th>
+          <td>{{ personaldetail.martial_status }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Mother tongue: </th>
+          <td>{{personaldetail.mother_tongue}}</td>
+          <th>Nationality</th>
+          <td>{{ personaldetail.nationality }}</td>
+        </tr>
+        <tr>
+          <th scope="row">State of domicile: </th>
+          <td>{{personaldetail.state_of_domicile}}</td>
+          <th>Adhaar number: </th>
+          <td>{{ personaldetail.adhaar_number }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container w-50  bg-light mt-4  " style="width: 1240px;">
+    <table class="table table-borderless" cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th scope="col" colspan="2">Academic Details</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <th>S.S.C or Equivalent Examination </th>
+          <th>S.Y.J.C or Equivalent Examination</th>
+
+        </tr>
+        <tr>
+          <th scope="row">Name of School:</th>
+          <td>{{ academicdetail.ssc_school_name}}</td>
+          <td>{{ academicdetail.hsc_school_name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Name of the Board/University:</th>
+          <td class="text-wrap">{{ academicdetail.ssc_school_board }}</td>
+          <td>{{ academicdetail.hsc_school_board }}</td>
+        </tr>
+        <tr>
+          <th scope="row">year of passing: </th>
+          <td>{{ academicdetail.ssc_passing_year| date:"m/Y" }}</td>
+
+          <td>{{ academicdetail.hsc_passing_year| date:"m/Y" }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Exam Seat No: </th>
+          <td>{{academicdetail.ssc_rollno}}</td>
+          <td>{{ academicdetail.hsc_rollno }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Total Marks Obtained: </th>
+          <td>{{ academicdetail.ssc_marks}}</td>
+          <td>{{ academicdetail.hsc_marks }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Out of Maximum Marks : </th>
+          <td>500</td>
+          <td>600</td>
+        </tr>
+        <tr>
+          <th scope="row">Percentage : </th>
+          <td>{{ academicdetail.hsc_class_percent }}</td>
+          <td>600</td>
+        </tr>
+        <tr>
+          <th scope="row">Class grade : </th>
+          <td>{{ academicdetail.ssc_class_grade }}</td>
+          <td>{{ academicdetail.hsc_class_grade }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="mt-5 p-2" style="text-align: justify;">
+
+      <p>
+        Declaration by applicant and parent / guardian<br>
+        I, the undersigned, hereby state that the information provided above is true and factual. I further state that I
+        have read all the
+        details of the admission process, attendance norms, and other rules and regulations that would govern me during
+        my stay in
+        this college and agree to abide by the same. I have attached self attested copies of all the relevant and
+        necessary documents
+        that I have submitted to the institution as part and requirementof admission procedure and state that the
+        documents are true. I
+        am aware that my application will be rejected if the application is incomplete or if the information provided is
+        not true.<br>
+        <br>
+        <br>
+        <br>
+        <span style="position: relative; float: left;">Place and Date: </span>
+        <span style="position: relative; float: right;">Signature by applicant / Student</span>
+        <br>  
+        <br>
+        I have read all the details of the admission process, attendance norms, and other rules and regulations that
+        would govern my
+        ward during his stay in the college and agree that my ward and myself (as parent / on behalf of parent as
+        guardian) would
+        abide by the same.<br>
+        <br>
+        <br>
+        <br>
+        <span style="position: relative; float: left;">Place and Date: </span>
+        <span style="position: relative; float: right;">Signature by applicant / Student</span>
+        <br>
+        <br>
+        <br>
+        <span style="font-weight: bolder;">Payment for application is 100 Rs</span>  
+      </p>
+    </div>
+  </div>
+  <div class="container w-50  bg-light mt-4 d-flex justify-content-end align-items-center" style="height: 50px;">
+    <div></div>
+    <a class="btn btn-primary" id="pay-btn" href="">payment</a>
+  </div>
+</div>
+
+<!-- {{categoryDetail.minority|yesno:"Yes,No"}} -->
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+  var options = {
+     
+    // Enter the Key ID generated from the Dashboard
+    key: "{{ razorpay_merchant_key }}", 
+     
+    // Amount is in currency subunits.
+    // Default currency is INR. Hence, 
+    // 50000 refers to 50000 paise
+    amount: "{{ razorpay_amount }}", 
+    currency: "{{ currency }}",
+     
+    // Your/store name.
+    name: "Universal", 
+     
+    // Pass the `id` obtained in the response of Step 1
+    order_id: "{{ razorpay_order_id }}", 
+    callback_url: "{{ callback_url }}",
+  };
+   
+  // initialise razorpay with the options.
+  var rzp1 = new Razorpay(options);
+   
+  // add event listener to the payment button.
+  document.getElementById("pay-btn").onclick = function (e) {
+    rzp1.open();
+    e.preventDefault();
+  };
+</script>
+
+
+
+<style>
+  span {
+    font-size: 14px;
+  }
+</style>
+
+
+{% endblock content %}

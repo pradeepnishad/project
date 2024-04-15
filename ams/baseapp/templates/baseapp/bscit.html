@@ -1,0 +1,193 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content%}
+
+
+
+
+
+<!-- <form method="post">
+  {% csrf_token %}
+  {{ form.new_password1.label_tag }} {{ form.new_password1 }}
+  {{ form.new_password2.label_tag }} {{ form.new_password2 }}
+  <button type="submit">Set New Password</button>
+</form> -->
+<div class="" style="width: 100%;">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container ">
+            <a class="navbar-brand" id="logo" href="#">Universal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav ms-auto text-center" id="ul">
+
+                <li class="nav-item ps-3">
+                    <a class="nav-link  col-danger" href="{% url 'home' %}">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid w-100 bg-dark d-flex justify-content-center align-items-center" style="height: 240vh;">
+
+
+        <br>
+        <div class="main  bg-light" style="padding: 10px 30px; border-radius: 10px; width: 80%;">
+            <h1 class="pt-5 pb-3 text-center text-primary">Bachelor of Science in Information Technology</h1>
+            <p>Aspirants are taught all the tools needed for the computer programming languages in addition to all the
+                necessary tools that are needed in the industry of IT. This course places equal importance to theory as
+                well as the practical aspect. This degree is primarily focused on subjects like software, databases and
+                networking. This program will give a strategic advantage top the building IT professionals.</p>
+            <br>
+            <h5 class="text-primary">Eligibility</h5>
+            <p>
+                -> O.5051: A candidate for being eligible for admission to the Degree Course of Bachelor of Science –
+                Information Technology, shall have passed XII standard examination of the Maharashtra Board of Higher
+                Secondary Education or its equivalent with Mathematics and Statistics as one of the subjects and should
+                have secured not less than 45% marks in aggregate for Open Category and 40% marks in aggregate in case
+                of Reserved Category candidates.
+            </p>
+            <h5 class="text-primary">OR</h5>
+            <p><strong>Admission Procedure: On the basis of aggregate of </strong></p>
+            <ol>
+                <li> Marks in Mathematics &amp; Statistics at H.S.C. or equivalent</li>
+                <li> Aggregate marks of H.S.C. or equivalent</li>
+                <li> Aggregate marks at S.S.C.</li>
+            </ol>
+            <p><strong>Eligibility for Admission to Direct Second Year of B.Sc. (IT)</strong></p>
+            <p>Candidates who have passed Diploma in Computer Engineering/Computer Science/Computer
+                Technology/Information Technology/Electrical, Electronics &amp; Video Engineering and Allied
+                Branches/Mechanical and Allied Branches, Civil and Allied Branches of Engineering after S.S.C. (Xth
+                Standard) are eligible for direct admission to the Second Year of the B.Sc. (I.T.) degree course.
+                However, the Diploma should be recognised by the Maharashtra State Board of Technical Education or any
+                other recognised Government body. Minimum marks required 45% aggregate for open category candidates and
+                40% aggregate for reserved category candidates.</p>
+            <p><strong>OR</strong></p>
+            <p>Students with post HSC – Diploma in Computer Engineering/Computer Science/Computer Technology/Information
+                Technology and Allied Branches will be eligible for direct admission to the Second Year of B.Sc. (I.T.)
+                However, the Diploma should be recognised by the Maharashtra State Board of Technical Education or any
+                other recognised Government body.</p>
+            <p><strong>Syllabus</strong></p>
+             
+            <table class="table">
+                <tbody>
+                <tr>
+                <td><strong>Sr. No.</strong></td>
+                <td colspan="3"><strong>Subjects</strong></td>
+                </tr>
+                <tr>
+                <td> </td>
+                <td><strong>FY BSc (IT) – I</strong></td>
+                <td><strong>FY BSc (IT) – II</strong></td>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>Imperative Programming</td>
+                <td>Object Oriented Programming</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>Digital Electronics</td>
+                <td>Microprocessor Architecture</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>Operating Systems</td>
+                <td>Web Programming</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>Discrete Mathematics</td>
+                <td>Numerical and Statistical Methods</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>Communication Skills</td>
+                <td>Green Computing</td>
+                </tr>
+                <tr>
+                <td> </td>
+                <td><strong>SY BSc (IT) – III</strong></td>
+                <td><strong>SY BSc (IT) – IV</strong></td>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>Python Programming</td>
+                <td>Core Java</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>Data Structures</td>
+                <td>Introduction to Embedded System</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>Computer Networks</td>
+                <td>Computer Oriented Statistical Techniques</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>Database Management System</td>
+                <td>Software Engineering</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>Applied Mathematics</td>
+                <td>Computer Graphics and Animation</td>
+                </tr>
+                <tr>
+                <td> </td>
+                <td><strong>TY BSc (IT) – V</strong></td>
+                <td><strong>TY BSc (IT) – VI</strong></td>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>Software Project Management</td>
+                <td>Software Quality Assurance</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>Internet of Things</td>
+                <td>Security in Computing</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>Advanced Web Programming</td>
+                <td>Business Intelligence</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>Artificial Intelligence/Linux System Administration</td>
+                <td>Enterprise Networking/Geographic Information System</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>Enterprise Java/Next Generation Technology</td>
+                <td>Cyber Laws/IT Service Management</td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td>Project Dissertation</td>
+                <td>Project Implementation</td>
+                </tr>
+                </tbody>
+                </table>
+
+        </div>
+
+        <style>
+            label,
+            p {
+                font-weight: bold;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+        </style>
+
+        {% endblock content %}

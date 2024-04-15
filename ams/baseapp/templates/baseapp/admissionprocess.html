@@ -1,0 +1,90 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content%}
+
+
+
+
+
+<!-- <form method="post">
+  {% csrf_token %}
+  {{ form.new_password1.label_tag }} {{ form.new_password1 }}
+  {{ form.new_password2.label_tag }} {{ form.new_password2 }}
+  <button type="submit">Set New Password</button>
+</form> -->
+<div class="" style="width: 100%;">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container ">
+            <a class="navbar-brand" id="logo" href="#">Universal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav ms-auto text-center" id="ul">
+                
+               <li class="nav-item ps-3">
+                 <a class="nav-link  col-danger" href="{% url 'home' %}">Home</a>
+               </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid w-100 bg-dark d-flex justify-content-center align-items-center" style="height: 140vh;">
+
+
+        <br>
+        <div class="main  bg-light" style="padding: 10px 30px; border-radius: 10px; width: 80%;">
+            <h1 class="text-primary text-center pt-5 pb-5">Admission Procedure</h1>
+            <p>
+                1. First Year Degree College Online Admission Procedure 2023-2024<br>
+                Fill the University of Mumbai Pre-Registration Form 2023-2024 by visiting the given website:
+                http://mum.digitaluniversity.ac/ Select MSG-SGKM College of Arts, Science and Commerce and college code
+                930. Please keep the scanned copies of your HSC Marksheet, HSC Leaving Certificate & SSC Passing
+                Certificate ready before you connect to the http://mum.digitaluniversity.ac/ as you are required to
+                upload the same while submitting the form on http://mum.digitaluniversity.ac/. Take the hard copy/ soft
+                copy of the pre-registration form 2023-2024 and keep it ready before you proceed to Step 2.
+                <br><br>
+                2.Click on the below link to fill the college pre-admission form –
+                http://uccollege.procampuz.com/adApplicantLoginDv.aspx<br>
+                Please fill the online form and upload the scanned copies of the documents mentioned below:<br>
+                -> Passport size photograph.<br>
+                -> Signature copy.<br>
+                -> University Pre-enrolment Form.<br>
+                -> HSC Marksheet.<br>
+                -> HSC Leaving Certificate.<br>
+                -> SSC Passing Certificate.<br>
+                -> Gujarati Linguistic Minority Certificate (if applicable).<br>
+                Any other certificate as applicable. (E.g. Physically Handicap, Children with special needs like
+                learning disability etc.)<br>
+                Note: The student is required to submit the original documents as and when demanded by the college
+                authorities.<br><br>
+                3. On successful uploading/submission of the pre-admission form of the college along with the documents,
+                the application will be verified by the admission department of the college.
+                <br><br>
+                4. Incomplete admission form or forms with incorrect information will be rejected.<br> <br>
+                5. All verified and approved forms shall be considered for selection in the merit list. The merit list
+                shall be displayed on the college notice board and website www.ghatkopar.universalcollege.edu.in<br><br>
+                6. On selection in the Merit List, students shall receive an SMS and an email regarding the admission
+                process, fee details and the payment procedure.<br><br>
+                Admissions will be confirmed after payment of fees and physical verification of original documents
+                within the stipulated time. If the fee is not paid by the applicant within the stipulated time period,
+                he/she will lose the claim of admission.<br><br>
+            </p>
+
+        </div>
+
+        <style>
+            label,
+            p {
+                font-weight: bold;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+        </style>
+
+        {% endblock content %}

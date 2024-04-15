@@ -1,0 +1,85 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="container-fluid w-100 bg-dark d-flex flex-column justify-content-center align-items-center"
+  style=" height: 120vh;">
+
+  <div class="main w-50 bg-light" style="padding: 10px 30px; width: 60%; border-radius: 10px;">
+    <h2 class="text-uppercase text-center mt-3 mb-3">Student Registration form</h2>
+
+    <form method="POST">
+      {% csrf_token%}
+
+      {% if messages %}
+      {% for message in messages%}
+      {% if message.tags == "error" %}
+      <div class="alert alert-danger" role="alert">
+        {{message}}
+      </div>
+      {% else %}
+      <div class="alert alert-success" role="alert">
+        {{message}}
+      </div>
+      {% endif%}
+      {% endfor%}
+      {% endif%}
+
+
+      <div class="form-outline mb-2">
+        <input type="text" id="form3Example1cg" name="username" class="form-control form-control-lg" />
+        <label class="form-label" for="form3Example1cg">Your Username</label>
+        <label class="form-label" for="form3Example3cg">-> Remember your username it will be use in
+          login.</label>
+      </div>
+
+      <div class="form-outline mb-2">
+        <input type="email" id="form3Example3cg" name="email" class="form-control form-control-lg" />
+        <label class="form-label" for="form3Example3cg">Your Email</label><br>
+      </div>
+
+      <div class="form-outline mb-2">
+        <!-- <input type="password" id="form3Example4cg" name="password" class="form-control form-control-lg" /> -->
+
+        <input type="password" class="form-control form-control-lg" name="password"/>
+        <label class="form-label" for="form3Example4cg">Password</label><br>
+        
+      </div>
+
+      <div class="form-outline mb-2">
+        <input type="password" id="form3Example4cdg" name="password2" class="form-control form-control-lg" />
+        <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary btn-block btn-lg text-white fw-bold">Register</button>
+      </div>
+
+      <p class="text-center text-muted mt-4 mb-0">Have already an account? <a href="{% url 'login' %}"
+          class="fw-bold text-body">Login here</a></p>
+
+      <br>
+      
+    </form>
+  </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  label {
+    font-weight: bold;
+  }
+</style>
+
+
+{% endblock content %}

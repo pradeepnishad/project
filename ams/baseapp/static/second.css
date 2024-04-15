@@ -1,0 +1,43 @@
+/* registration page*/
+
+.gradient-custom-3 {
+    /* fallback for old browsers */
+    background: rgb(21, 106, 235, 0.8);
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(21, 106, 235, 1), rgba(143, 211, 244, 0.5));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(21, 106, 235, 1), rgba(143, 211, 244, 0.5))
+    }
+    .gradient-custom-4 {
+    /* fallback for old browsers */
+    background: rgb(21, 106, 235, 0.8);
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(21, 106, 235, 1), rgba(143, 211, 244, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(21, 106, 235, 1), rgba(143, 211, 244, 1))
+    }
+
+/* notice board */
+
+
+    
+    .my-vh{
+      height: 100vh;
+    }
+    
+    .my-card{
+      height: 100%;
+    }
+
+
+    /* profile view edit */
+
+    .profile_pic{
+      width: 200px;
+      height: 200px;
+    }
+

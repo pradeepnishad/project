@@ -1,0 +1,90 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="" style="width: 100%;">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container ">
+      <a class="navbar-brand" id="logo" href="#">Universal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center" id="ul">
+          <li class="nav-item ps-3">
+            <a class="nav-link active col-danger" aria-current="page" href="#">{{categorydetail.user.username}}</a>
+          </li>
+          <li class="nav-item ps-3">
+            <a class="nav-link active col-danger" aria-current="page" href="{% url 'logout' %}">Login out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-fluid w-100 bg-dark d-flex flex-column justify-content-center align-items-center" style=" height: 120vh; margin-top: 40px;">
+  <div class="main w-50 bg-light d-flex justify-content-around align-items-center " style=" height: 50px; padding: 10px 30px; border-radius: 10px;">
+    <a href="{% url 'personalform' %}" class="btn btn-primary">Personal details</a>
+    <a href="{% url 'academicform' %}" class="btn btn-primary ms-3">Academic details</a>
+
+    </div>
+  <br>
+    
+    <div class="main w-50 bg-light" style="padding: 10px 30px; border-radius: 10px;">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token%}
+      <h1 class="text-center mt-3 mb-5">Category Detail</h1>
+      
+      
+      <div class="mb-3">
+        <label for="school_name" class="form-label">Category</label>
+        {{form.category}}
+      </div>
+      <div class="mb-3">
+        <label for="school_name" class="form-label">Science: </label>
+        {{form.science}}
+      </div>
+      <div class="mb-3">
+        <label for="school_name" class="form-label">Commerce: </label>
+        {{form.commerce}}
+      </div>
+      <div class="mb-3">
+        <label for="school_name" class="form-label">Arts: </label>
+        {{form.art}}
+      </div>
+      <div class="mb-3">
+        <label for="school_name" class="form-label">Minority</label>
+        {{form.minority}}
+      </div>
+      <div class="mb-3">
+        <label for="school_name" class="form-label">Physically: </label>
+        {{form.physically}}
+      </div>
+      
+      <br>
+    <div style="width: 100%; height: 40px;" class=" d-flex justify-content-end mb-4" ><button type="submit" class="btn btn-primary">Next</button></div>
+</form>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.stream').change(function() {
+            $('.stream').prop('checked', false);  // Uncheck all checkboxes
+            $(this).prop('checked', true);  // Check the clicked checkbox
+        });
+    });
+</script>
+
+<style>
+  label{
+    font-weight: bold;
+  }
+</style>
+
+
+
+{% endblock content %}

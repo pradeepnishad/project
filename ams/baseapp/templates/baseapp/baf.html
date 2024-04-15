@@ -1,0 +1,200 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content%}
+
+
+
+
+
+<!-- <form method="post">
+  {% csrf_token %}
+  {{ form.new_password1.label_tag }} {{ form.new_password1 }}
+  {{ form.new_password2.label_tag }} {{ form.new_password2 }}
+  <button type="submit">Set New Password</button>
+</form> -->
+<div class="" style="width: 100%;">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container ">
+            <a class="navbar-brand" id="logo" href="#">Universal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav ms-auto text-center" id="ul">
+
+                <li class="nav-item ps-3">
+                    <a class="nav-link  col-danger" href="{% url 'home' %}">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid w-100 bg-dark d-flex justify-content-center align-items-center" style="height: 220vh;">
+
+
+        <br>
+        <div class="main  bg-light" style="padding: 10px 30px; border-radius: 10px; width: 80%;">
+            <h1 class="pt-5 pb-3 text-center text-primary">Bachelor of accounting and finance</h1>
+            <p>Bachelor of Commerce in Accounting and Finance, also known as BAF Course, is an undergraduate programme
+                that provides training in the areas of accounting and finance. The duration of the course shall be six
+                semesters spread over in three years. The objective of this course is to improve self-employment and
+                provide benefits to the organizations by providing them with suitably trained persons in the field of
+                Accounting & Finance by effective mode of interaction, presentations, projects, industrial visits and
+                practical training. BAF degree will help you to gain knowledge in areas of Financial Accounting, Cost
+                Accounting, Auditing, IT, Taxation, Economics and Business Law and Business Communications.</p>
+            <br>
+            <h5 class="text-primary">Eligibility</h5>
+            <p>
+                -> O.5204: A candidate for being eligible for admission to the Bachelor of Commerce (Accounting &
+                Finance) Degree Course shall have passed XIIth Std. Examination of the Maharashtra Board of Higher
+                Secondary Education or its equivalent examination and secured not less than 45% marks in aggregate at
+                FIRST ATTEMPT (40% in the case of Reserved Category).<br>
+                Every candidate admitted to the Degree Course in the Constituent/Affiliated Colleges recognised
+                institution, conducting the course, shall have to register himself/herself with the University. Students
+                coming from University/Board other than Maharashtra must get eligibility for B.Com. (Accounting &
+                Finance).
+            </p>
+
+
+            <p><strong>Syllabus</strong></p>
+            <table class="table">
+                <tbody>
+                <tr>
+                <td><strong>Sr. No.</strong></td>
+                <td colspan="2"><strong>Subjects</strong></td>
+                </tr>
+                <tr>
+                <td> </td>
+                <td><strong>FY BAF – I</strong></td>
+                <td><strong>FY BAF – II</strong></td>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>Financial Accounting &#8211; I</td>
+                <td>Financial Accounting &#8211; II</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>Cost Accounting &#8211; I</td>
+                <td>Auditing &#8211; I</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>Financial Management &#8211; I</td>
+                <td>Innovative Financial Services</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>Business Communication &#8211; I</td>
+                <td>Business Communication &#8211; II</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>Foundation Course &#8211; I</td>
+                <td>Foundation Course &#8211; II</td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td>Commerce &#8211; I</td>
+                <td>Business Law &#8211; I</td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td>Business Economics &#8211; I</td>
+                <td>Business Mathematics</td>
+                </tr>
+                <tr>
+                <td> </td>
+                <td><strong>SY BAF – III</strong></td>
+                <td><strong>SY BAF – IV</strong></td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td>Information Technology in Accountancy &#8211; I</td>
+                <td>Information Technology in Accountancy &#8211; II</td>
+                </tr>
+                <tr>
+                <td>9</td>
+                <td>Foundation Course Contemporary Issues &#8211; III</td>
+                <td>Foundation Course Contemporary Issues &#8211; IV</td>
+                </tr>
+                <tr>
+                <td>10</td>
+                <td>Business Law &#8211; II (Business Regulatory Framework)</td>
+                <td>Business Law &#8211; III (Company Law)</td>
+                </tr>
+                <tr>
+                <td>11</td>
+                <td>Business Economics &#8211; II (Macro Economics)</td>
+                <td>Research Methodology in Accounting &amp; Finance</td>
+                </tr>
+                <tr>
+                <td>12</td>
+                <td>Cost Accounting (Methods of Costing) &#8211; II</td>
+                <td>Financial Accounting (Special Accounting Areas) &#8211; IV</td>
+                </tr>
+                <tr>
+                <td>13</td>
+                <td>Financial Accounting &#8211; III (Special Accounting Areas)</td>
+                <td>Management Accounting (Introduction to Management Accounting) &#8211; II</td>
+                </tr>
+                <tr>
+                <td>14</td>
+                <td>Taxation II (Direct Taxes Paper I)</td>
+                <td>Taxation-III (Direct Taxes Paper II)</td>
+                </tr>
+                <tr>
+                <td> </td>
+                <td><strong>TY BAF – V</strong></td>
+                <td><strong>TY BAF – VI</strong></td>
+                </tr>
+                <tr>
+                <td>15</td>
+                <td>Financial Accounting &#8211; V </td>
+                <td>Financial Accounting Paper &#8211; VII </td>
+                </tr>
+                <tr>
+                <td>16</td>
+                <td>Financial Accounting &#8211; VI</td>
+                <td>Project Work </td>
+                </tr>
+                <tr>
+                <td>17</td>
+                <td>Cost Accounting Paper &#8211; III </td>
+                <td>Cost Accounting Paper &#8211; IV</td>
+                </tr>
+                <tr>
+                <td>18</td>
+                <td>Financial Management &#8211; II </td>
+                <td>Financial Management &#8211; III </td>
+                </tr>
+                <tr>
+                <td>19</td>
+                <td>Taxation Paper &#8211; IV (Indirect Tax &#8211; II) </td>
+                <td>Taxation Paper &#8211; V (Indirect Taxes &#8211; III) </td>
+                </tr>
+                <tr>
+                <td>20</td>
+                <td>International Finance</td>
+                <td>Security Analysis and Portfolio Management</td>
+                </tr>
+                </tbody>
+                </table>
+
+        </div>
+
+        <style>
+            label,
+            p {
+                font-weight: bold;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+        </style>
+
+        {% endblock content %}
